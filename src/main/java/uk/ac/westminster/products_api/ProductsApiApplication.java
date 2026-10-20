@@ -12,8 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class t add .
-ProductsApiApplication {
+public class ProductsApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductsApiApplication.class, args);

@@ -1,15 +1,15 @@
 package uk.ac.westminster.products_api;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import uk.ac.westminster.products_api.Product;
-
 import java.util.List;
 
 @RestController
 public class ProductController {
-    // Spring creates the ProductService and hands it over.
+
     @Autowired
     private ProductService productService;
+
     @GetMapping("/products")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
@@ -17,8 +17,9 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable Long id) {
-        return productService.getProductById(id).orElse(null);
+        return productService.getProductById(id);
     }
+
     @PostMapping("/products")
     public Product addProduct(@RequestBody Product product) {
         return productService.addProduct(product);
